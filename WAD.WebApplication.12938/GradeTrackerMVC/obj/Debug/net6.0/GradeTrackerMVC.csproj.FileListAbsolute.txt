@@ -28,3 +28,6 @@ C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\obj\Debug\net6.0\GradeTrackerMVC.pdb
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\obj\Debug\net6.0\GradeTrackerMVC.genruntimeconfig.cache
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\obj\Debug\net6.0\ref\GradeTrackerMVC.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\obj\Debug\net6.0\GradeTrackerMVC.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerMVC\obj\Debug\net6.0\GradeTrackerMVC.csproj.CopyComplete
