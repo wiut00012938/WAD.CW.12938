@@ -1,6 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GradeTrackerAPI.Models
+namespace GradeTrackerDAL.Models
 {
     public class Assignment
     {
@@ -10,8 +14,7 @@ namespace GradeTrackerAPI.Models
         public DateTime CreatedDate { get; set; }
         public int ModuleId { get; set; }
         //Navigation properities for Assigment Table
-        public Module Module { get; set; }
-        public ICollection<Grade> Grades { get; set;}
-
+        public GradeTrackerDAL.Models.Module Module { get; set; }
+        public ICollection<Grade> Grades { get; set; }
     }
 }

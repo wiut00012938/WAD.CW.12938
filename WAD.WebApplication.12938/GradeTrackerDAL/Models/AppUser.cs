@@ -1,10 +1,16 @@
-﻿namespace GradeTrackerAPI.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GradeTrackerDAL.Models
 {
     public class AppUser
     {
         public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string ProfileImage { get; set; }
+        public string? ProfileImage { get; set; }
     }
 }

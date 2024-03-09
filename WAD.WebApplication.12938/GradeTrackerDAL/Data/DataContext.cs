@@ -1,11 +1,16 @@
-﻿using GradeTrackerAPI.Models;
+﻿using GradeTrackerDAL.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GradeTrackerAPI.Data
+namespace GradeTrackerDAL.Data
 {
     public class DataContext: DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options): base(options) 
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
         }
@@ -17,8 +22,8 @@ namespace GradeTrackerAPI.Data
         public DbSet<Grade> Grades { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
+        {
+            base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Module>()
                 .HasOne(m => m.Teacher)
@@ -27,9 +32,9 @@ namespace GradeTrackerAPI.Data
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Module>()
-                .HasMany(m => m.Students)
-                .WithMany(s => s.EnrolledModules)
-                .UsingEntity(j => j.ToTable("ModuleStudent"));
+                        .HasMany(m => m.Students)
+                        .WithMany(s => s.EnrolledModules)
+                        .UsingEntity(j => j.ToTable("ModuleStudent"));
 
             modelBuilder.Entity<Assignment>()
                 .HasOne(a => a.Module)
@@ -49,7 +54,7 @@ namespace GradeTrackerAPI.Data
                 .HasForeignKey(g => g.AssignmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            
+
             modelBuilder.Entity<Teacher>()
                 .HasOne(t => t.User)
                 .WithOne()

@@ -1,6 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace GradeTrackerAPI.Models
+namespace GradeTrackerDAL.Models
 {
     public class Teacher
     {

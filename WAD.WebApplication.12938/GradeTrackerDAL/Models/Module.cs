@@ -1,11 +1,17 @@
-﻿namespace GradeTrackerAPI.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GradeTrackerDAL.Models
 {
     public class Module
     {
         public int ModuleId { get; set; }
 
         public string ModuleName { get; set; }
-        public string ModuleDescription { get; set; }
+        public string? ModuleDescription { get; set; }
         public int TeacherId { get; set; }
 
         //Navigation to Teacher and Assignment Tables
