@@ -24,8 +24,11 @@ namespace GradeTrackerDAL.Migrations
 
             modelBuilder.Entity("GradeTrackerDAL.Models.AppUser", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -125,6 +128,21 @@ namespace GradeTrackerDAL.Migrations
                     b.ToTable("Modules");
                 });
 
+            modelBuilder.Entity("GradeTrackerDAL.Models.ModuleStudent", b =>
+                {
+                    b.Property<int>("ModuleId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ModuleId", "StudentId");
+
+                    b.HasIndex("StudentId");
+
+                    b.ToTable("ModuleStudents");
+                });
+
             modelBuilder.Entity("GradeTrackerDAL.Models.Student", b =>
                 {
                     b.Property<int>("Id")
@@ -136,14 +154,12 @@ namespace GradeTrackerDAL.Migrations
                     b.Property<int>("EnrolledModulesNum")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Students");
                 });
@@ -163,14 +179,12 @@ namespace GradeTrackerDAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .IsUnique();
+                    b.HasIndex("UserId");
 
                     b.ToTable("Teachers");
                 });
@@ -187,7 +201,7 @@ namespace GradeTrackerDAL.Migrations
 
                     b.HasIndex("StudentsId");
 
-                    b.ToTable("ModuleStudent", (string)null);
+                    b.ToTable("ModuleStudent");
                 });
 
             modelBuilder.Entity("GradeTrackerDAL.Models.Assignment", b =>
@@ -231,11 +245,30 @@ namespace GradeTrackerDAL.Migrations
                     b.Navigation("Teacher");
                 });
 
+            modelBuilder.Entity("GradeTrackerDAL.Models.ModuleStudent", b =>
+                {
+                    b.HasOne("GradeTrackerDAL.Models.Module", "Module")
+                        .WithMany("ModuleStudents")
+                        .HasForeignKey("ModuleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GradeTrackerDAL.Models.Student", "Student")
+                        .WithMany("ModuleStudents")
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Module");
+
+                    b.Navigation("Student");
+                });
+
             modelBuilder.Entity("GradeTrackerDAL.Models.Student", b =>
                 {
                     b.HasOne("GradeTrackerDAL.Models.AppUser", "User")
-                        .WithOne()
-                        .HasForeignKey("GradeTrackerDAL.Models.Student", "UserId")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -245,8 +278,8 @@ namespace GradeTrackerDAL.Migrations
             modelBuilder.Entity("GradeTrackerDAL.Models.Teacher", b =>
                 {
                     b.HasOne("GradeTrackerDAL.Models.AppUser", "User")
-                        .WithOne()
-                        .HasForeignKey("GradeTrackerDAL.Models.Teacher", "UserId")
+                        .WithMany()
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -276,11 +309,15 @@ namespace GradeTrackerDAL.Migrations
             modelBuilder.Entity("GradeTrackerDAL.Models.Module", b =>
                 {
                     b.Navigation("Assignments");
+
+                    b.Navigation("ModuleStudents");
                 });
 
             modelBuilder.Entity("GradeTrackerDAL.Models.Student", b =>
                 {
                     b.Navigation("Grades");
+
+                    b.Navigation("ModuleStudents");
                 });
 
             modelBuilder.Entity("GradeTrackerDAL.Models.Teacher", b =>

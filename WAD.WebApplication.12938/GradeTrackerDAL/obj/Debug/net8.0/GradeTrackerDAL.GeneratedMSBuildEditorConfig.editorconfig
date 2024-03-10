@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GradeTrackerDAL
-build_property.ProjectDir = C:\Users\User\OneDrive\Документы\Education\level 5\Web Application Development\WAD.WebApplication.12938\GradeTrackerDAL\
+build_property.ProjectDir = C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

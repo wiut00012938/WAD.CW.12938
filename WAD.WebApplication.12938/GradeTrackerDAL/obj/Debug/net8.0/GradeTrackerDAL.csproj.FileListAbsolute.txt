@@ -12,3 +12,18 @@ C:\Users\User\OneDrive\Документы\Education\level 5\Web Application Deve
 C:\Users\User\OneDrive\Документы\Education\level 5\Web Application Development\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.pdb
 C:\Users\User\OneDrive\Документы\Education\level 5\Web Application Development\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.genruntimeconfig.cache
 C:\Users\User\OneDrive\Документы\Education\level 5\Web Application Development\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\ref\GradeTrackerDAL.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\bin\Debug\net8.0\GradeTrackerDAL.deps.json
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\bin\Debug\net8.0\GradeTrackerDAL.runtimeconfig.json
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\bin\Debug\net8.0\GradeTrackerDAL.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\bin\Debug\net8.0\GradeTrackerDAL.pdb
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.AssemblyInfoInputs.cache
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.AssemblyInfo.cs
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.sourcelink.json
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\refint\GradeTrackerDAL.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.pdb
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\GradeTrackerDAL.genruntimeconfig.cache
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerDAL\obj\Debug\net8.0\ref\GradeTrackerDAL.dll

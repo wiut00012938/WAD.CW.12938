@@ -12,9 +12,8 @@ namespace GradeTrackerDAL.Models
         public string AssignmentName { get; set; }
         public string? AssignmentDescription { get; set; }
         public DateTime CreatedDate { get; set; }
-        public int ModuleId { get; set; }
-        //Navigation properities for Assigment Table
-        public GradeTrackerDAL.Models.Module Module { get; set; }
+  
+        public Module Module { get; set; }
         public ICollection<Grade> Grades { get; set; }
     }
 }
