@@ -2,6 +2,7 @@
 using GradeTrackerDAL.Data;
 using GradeTrackerDAL.DTO;
 using GradeTrackerDAL.Models;
+using GradeTrackerDAL.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,12 +12,12 @@ namespace GradeTrackerAPI.Controllers
     [ApiController]
     public class TeacherController : Controller
     {
-        private readonly DataContext _dbContext;
+        private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
 
-        public TeacherController(DataContext dbContext, IMapper mapper)
+        public TeacherController(ITeacherRepository teacherRepository, IMapper mapper)
         {
-            _dbContext = dbContext;
+            _teacherRepository = teacherRepository;
             _mapper = mapper;
         }
         [HttpGet("{TeacherId}")]
@@ -24,11 +25,11 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         public IActionResult GetTeacher(int TeacherId)
         {
-            if (_dbContext.Teachers.Any(r => r.Id == TeacherId) == null)
+            if (!_teacherRepository.TeacherExists(TeacherId))
             {
                 return NotFound();
             }
-            var teacher = _mapper.Map<TeacherDto>(_dbContext.Teachers.Where(r => r.Id == TeacherId).Include(u => u.User).FirstOrDefault());
+            var teacher = _mapper.Map<TeacherDto>(_teacherRepository.GetTeacher(TeacherId));
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -37,11 +38,11 @@ namespace GradeTrackerAPI.Controllers
         [HttpGet("{reviewerId}/modules")]
         public IActionResult GetModulesByTeacher(int TeacherId)
         {
-            if (_dbContext.Teachers.Any(r => r.Id == TeacherId) == null)
+            if (!_teacherRepository.TeacherExists(TeacherId))
                 return NotFound();
 
             var modules = _mapper.Map<List<ModuleDto>>(
-                _dbContext.Modules.Where(m => m.Teacher.Id == TeacherId).ToList());
+                _teacherRepository.GetModulesByTeacher(TeacherId));
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -59,34 +60,13 @@ namespace GradeTrackerAPI.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            // Create an AppUser from the TeacherDto
-            var appUser = teacherCreate.User;
-
-            // Add the AppUser to the context and save changes
-            _dbContext.Add(appUser);
-            var appUserSaved = _dbContext.SaveChanges();
-
-            if (appUserSaved <= 0)
-            {
-                return StatusCode(500, ModelState);
-            }
-
-            // Create a Teacher from the TeacherDto
             var teacher = _mapper.Map<Teacher>(teacherCreate);
 
-            // Assign the AppUser's Id to the Teacher's AppUserId
-            teacher.User = appUser;
+            
 
-            // Add the Teacher to the context and save changes
-            _dbContext.Add(teacher);
-            var teacherSaved = _dbContext.SaveChanges();
-
-            if (teacherSaved <= 0)
+            if (!_teacherRepository.CreateTeacher(teacher))
             {
-                // Rollback the AppUser creation if Teacher creation fails
-                _dbContext.Remove(appUser);
-                _dbContext.SaveChanges();
-
+                ModelState.AddModelError("", "Something went wrong while savin");
                 return StatusCode(500, ModelState);
             }
 
@@ -104,16 +84,15 @@ namespace GradeTrackerAPI.Controllers
             if (TeacherId != teacherUpdate.Id)
                 return BadRequest(ModelState);
 
-            if (!_dbContext.Teachers.Any(r => r.Id == TeacherId))
+            if (!_teacherRepository.TeacherExists(TeacherId))
                 return NotFound();
 
             if (!ModelState.IsValid)
                 return BadRequest();
 
             var teachermap = _mapper.Map<Teacher>(teacherUpdate);
-            _dbContext.Update(teachermap);
-            var saved = _dbContext.SaveChanges();
-            if (saved! > 0)
+
+            if (!_teacherRepository.UpdateTeacher(teachermap))
             {
                 ModelState.AddModelError("", "Something went wrong updating teacher");
                 return StatusCode(500, ModelState);
@@ -126,20 +105,17 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(404)]
         public IActionResult DeleteReviewer(int TeacherId)
         {
-            if (!_dbContext.Teachers.Any(r => r.Id == TeacherId))
+            if (!_teacherRepository.TeacherExists(TeacherId))
             {
                 return NotFound();
             }
 
-            var teacherToDelete = _dbContext.Teachers.Where(t => t.Id == TeacherId).FirstOrDefault();
+            var teacherToDelete = _teacherRepository.GetTeacher(TeacherId);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            _dbContext.Remove(teacherToDelete);
-            var saved = _dbContext.SaveChanges();
-
-            if (saved !> 0)
+            if (!_teacherRepository.DeleteTeacher(teacherToDelete))
             {
                 ModelState.AddModelError("", "Something went wrong deleting Teacher");
             }
