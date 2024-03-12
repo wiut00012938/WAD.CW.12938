@@ -10,7 +10,7 @@ namespace GradeTrackerDAL.Repositories
     public interface IStudentRepository
     {
         Student GetStudent(int id);
-        ICollection<Module> GetModulesByStudent(int StudentId);
+        ICollection<ModuleStudent> GetModulesByStudent(int StudentId);
         ICollection<Grade> GetGradesByStudent(int StudentId);
         bool StudentExists(int StudentId);
         bool CreateStudent(Student student);

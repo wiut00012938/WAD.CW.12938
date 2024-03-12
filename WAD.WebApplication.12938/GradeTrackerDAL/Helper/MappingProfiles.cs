@@ -17,6 +17,12 @@ namespace GradeTrackerDAL.Helper
             CreateMap<TeacherDto, Teacher>();
             CreateMap<Module, ModuleDto>();
             CreateMap<ModuleDto, Module>();
+            CreateMap<Student, StudentDto>();
+            CreateMap<StudentDto, Student>();
+            CreateMap<Grade, GradeDto>();
+            CreateMap<GradeDto, Grade>();
+            CreateMap<Assignment, AssignmentDto>();
+            CreateMap<AssignmentDto, Assignment>();
         }
     }
 }

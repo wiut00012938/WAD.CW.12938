@@ -29,6 +29,9 @@ namespace GradeTrackerDAL.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ModuleStudent>()
+                .ToTable("ModuleStudents");
+
+            modelBuilder.Entity<ModuleStudent>()
                 .HasKey(mc => new { mc.ModuleId, mc.StudentId });
 
             modelBuilder.Entity<ModuleStudent>()

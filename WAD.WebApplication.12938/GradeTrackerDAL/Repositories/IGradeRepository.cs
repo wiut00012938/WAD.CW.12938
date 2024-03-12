@@ -10,12 +10,10 @@ namespace GradeTrackerDAL.Repositories
     public interface IGradeRepository
     {
         Grade GetGrade(int id);
-        Student GetStudentByGrade(int GradeId);
-        Assignment GetAssignmentByGrade(int GradeId);
         bool GradeExists(int GradeId);
         bool CreateGrade(Grade grade);
         bool UpdateGrade(Grade grade);
-        bool DeleteGrade(int GradeId);
+        bool DeleteGrade(Grade grade);
         bool Save();
     }
 }

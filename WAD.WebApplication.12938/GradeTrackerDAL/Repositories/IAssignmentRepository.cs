@@ -10,12 +10,11 @@ namespace GradeTrackerDAL.Repositories
     public interface IAssignmentRepository
     {
         Assignment GetAssignment(int id);
-        Module GetModuleByAssignment(int AssignmentId);
         ICollection<Grade> GetGradesByAssignment(int AssignmentId);
         bool AssignmentExists(int AssignmentId);
         bool CreateAssignment(Assignment assignment);
         bool UpdateAssignment(Assignment assignment);
-        bool DeleteAssignment(int AssignmentId);
+        bool DeleteAssignment(Assignment assignment);
         bool Save();
     }
 }

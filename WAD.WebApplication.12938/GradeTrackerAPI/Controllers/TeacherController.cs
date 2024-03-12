@@ -35,7 +35,7 @@ namespace GradeTrackerAPI.Controllers
                 return BadRequest(ModelState);
             return Ok(teacher);
         }
-        [HttpGet("{reviewerId}/modules")]
+        [HttpGet("{TeacherId}/modules")]
         public IActionResult GetModulesByTeacher(int TeacherId)
         {
             if (!_teacherRepository.TeacherExists(TeacherId))
@@ -76,7 +76,7 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateReviewer(int TeacherId, [FromBody] TeacherDto teacherUpdate)
+        public IActionResult UpdateTeacher(int TeacherId, [FromBody] TeacherDto teacherUpdate)
         {
             if (teacherUpdate == null)
                 return BadRequest(ModelState);
@@ -103,7 +103,7 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteReviewer(int TeacherId)
+        public IActionResult DeleteTeacher(int TeacherId)
         {
             if (!_teacherRepository.TeacherExists(TeacherId))
             {

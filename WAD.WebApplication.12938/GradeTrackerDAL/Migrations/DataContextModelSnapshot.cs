@@ -140,7 +140,7 @@ namespace GradeTrackerDAL.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.ToTable("ModuleStudents");
+                    b.ToTable("ModuleStudents", (string)null);
                 });
 
             modelBuilder.Entity("GradeTrackerDAL.Models.Student", b =>
