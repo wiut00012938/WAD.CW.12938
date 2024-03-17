@@ -66,7 +66,7 @@ namespace GradeTrackerAPI.Controllers
         [HttpPost]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
-        public IActionResult CreateModule([FromQuery] int TeacherId, [FromBody] ModuleDto moduleCreate)
+        public async Task<IActionResult> CreateModule([FromQuery] int TeacherId, [FromBody] ModuleDto moduleCreate)
         {
             if (moduleCreate == null)
                 return BadRequest(ModelState);
@@ -78,7 +78,7 @@ namespace GradeTrackerAPI.Controllers
             module.Teacher = _teacherRepository.GetTeacher(TeacherId);
             module.Teacher.LeadingModulesNum = module.Teacher.LeadingModulesNum + 1;
 
-            if (!_teacherRepository.UpdateTeacher(module.Teacher))
+            if (! await _teacherRepository.UpdateTeacher(module.Teacher))
             {
                 ModelState.AddModelError("", "Something went wrong while savin");
                 return StatusCode(500, ModelState);
@@ -123,7 +123,7 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteModule(int ModuleId)
+        public async Task<IActionResult> DeleteModule(int ModuleId)
         {
             if (!_moduleRepository.ModuleExists(ModuleId))
             {
@@ -134,7 +134,7 @@ namespace GradeTrackerAPI.Controllers
 
             moduleToDelete.Teacher.LeadingModulesNum = moduleToDelete.Teacher.LeadingModulesNum  + 1;
 
-            if (!_teacherRepository.UpdateTeacher(moduleToDelete.Teacher))
+            if (!await _teacherRepository.UpdateTeacher(moduleToDelete.Teacher))
             {
                 ModelState.AddModelError("", "Something went wrong while deleting");
                 return StatusCode(500, ModelState);
@@ -154,7 +154,7 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteReviewsByReviewer(int TeacherId)
+        public async Task<IActionResult> DeleteReviewsByReviewer(int TeacherId)
         {
             if (!_teacherRepository.TeacherExists(TeacherId))
                 return NotFound();
@@ -163,7 +163,7 @@ namespace GradeTrackerAPI.Controllers
             var teacher = _teacherRepository.GetTeacher(TeacherId);
             teacher.LeadingModulesNum = 0;
 
-            if (!_teacherRepository.UpdateTeacher(teacher))
+            if (!await _teacherRepository.UpdateTeacher(teacher))
             {
                 ModelState.AddModelError("", "Something went wrong while deleting");
                 return StatusCode(500, ModelState);

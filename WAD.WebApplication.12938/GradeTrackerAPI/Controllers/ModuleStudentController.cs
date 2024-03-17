@@ -43,7 +43,7 @@ namespace GradeTrackerAPI.Controllers
 
             return Ok("Successfully included a student to the module");
         }
-        [HttpDelete("{reviewId}")]
+        [HttpDelete("{ModuleId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]

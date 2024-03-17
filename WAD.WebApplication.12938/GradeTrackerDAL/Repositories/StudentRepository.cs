@@ -21,11 +21,6 @@ namespace GradeTrackerDAL.Repositories
             _context = context;
             _mapper = mapper;
         }
-        public bool CreateStudent(Student student)
-        {
-            _context.Add(student);
-            return Save();
-        }
 
         public bool DeleteStudent(Student student)
         {
@@ -49,10 +44,21 @@ namespace GradeTrackerDAL.Repositories
             return _context.Students.Where(s => s.Id == id).Include(u => u.User).FirstOrDefault();
         }
 
+        public Student GetStudentByUser(string username)
+        {
+            return _context.Students.Where(r => r.User.UserName == username).Include(u => u.User).FirstOrDefault();
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
+        }
+
+        public async Task<bool> SaveAsync()
+        {
+            var saved = await _context.SaveChangesAsync();
+            return saved > 0; throw new NotImplementedException();
         }
 
         public bool StudentExists(int StudentId)
@@ -60,10 +66,17 @@ namespace GradeTrackerDAL.Repositories
             return _context.Students.Any(s => s.Id == StudentId);
         }
 
-        public bool UpdateStudent(Student student)
+
+        public async Task<bool> CreateStudent(Student student)
+        {
+            _context.Add(student);
+            return await SaveAsync();
+        }
+
+        public async Task<bool> UpdateStudent(Student student)
         {
             _context.Update(student);
-            return Save();
+            return await SaveAsync();
         }
     }
 }

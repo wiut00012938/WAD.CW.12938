@@ -11,6 +11,6 @@ namespace GradeTrackerDAL.DTO
     {
         public int Id { get; set; } //Primary Key for Student
         public int EnrolledModulesNum { get; set; }
-        public AppUser User { get; set; }
+        public UserDto User { get; set; }
     }
 }

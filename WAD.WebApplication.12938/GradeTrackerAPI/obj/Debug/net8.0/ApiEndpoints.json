@@ -559,7 +559,7 @@
   {
     "ContainingType": "GradeTrackerAPI.Controllers.ModuleStudentController",
     "Method": "DeleteStudentFromModule",
-    "RelativePath": "api/ModuleStudent/{reviewId}",
+    "RelativePath": "api/ModuleStudent/{ModuleId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -575,7 +575,7 @@
         "IsRequired": false
       },
       {
-        "Name": "reviewId",
+        "Name": "ModuleId",
         "Type": "",
         "IsRequired": true
       }
@@ -608,23 +608,32 @@
   },
   {
     "ContainingType": "GradeTrackerAPI.Controllers.StudentController",
-    "Method": "CreateStudent",
+    "Method": "Login",
     "RelativePath": "api/Student",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "studentCreate",
-        "Type": "GradeTrackerDAL.DTO.StudentDto",
-        "IsRequired": true
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
+        "Type": "GradeTrackerDAL.Models.Student",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       },
       {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
@@ -790,24 +799,49 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GradeTrackerAPI.Controllers.TeacherController",
-    "Method": "CreateTeacher",
-    "RelativePath": "api/Teacher",
+    "ContainingType": "GradeTrackerAPI.Controllers.StudentController",
+    "Method": "Register",
+    "RelativePath": "api/Student/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "teacherCreate",
-        "Type": "GradeTrackerDAL.DTO.TeacherDto",
+        "Name": "studentDto",
+        "Type": "GradeTrackerDAL.DTO.StudentDto",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GradeTrackerAPI.Controllers.TeacherController",
+    "Method": "Login",
+    "RelativePath": "api/Teacher",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
+        "Type": "GradeTrackerDAL.Models.Teacher",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
       },
       {
         "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
@@ -951,6 +985,22 @@
       {
         "Name": "TeacherId",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GradeTrackerAPI.Controllers.TeacherController",
+    "Method": "Register",
+    "RelativePath": "api/Teacher/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "teacherDto",
+        "Type": "GradeTrackerDAL.DTO.TeacherDto",
         "IsRequired": true
       }
     ],

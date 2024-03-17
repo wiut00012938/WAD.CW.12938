@@ -22,12 +22,6 @@ namespace GradeTrackerDAL.Repositories
             _mapper = mapper;
         }
 
-        public bool CreateTeacher(Teacher teacher)
-        {
-            _context.Add(teacher);
-            return Save();
-        }
-
         public bool DeleteTeacher(Teacher teacher)
         {
             _context.Remove(teacher);
@@ -45,10 +39,21 @@ namespace GradeTrackerDAL.Repositories
             return _context.Teachers.Where(r => r.Id == id).Include(u => u.User).FirstOrDefault();
         }
 
+        public Teacher GetTeacherByUser(string UserName)
+        {
+            return _context.Teachers.Where(r => r.User.UserName == UserName).Include(u => u.User).FirstOrDefault();
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();
             return saved > 0 ? true: false;
+        }
+
+        public async Task<bool> SaveAsync()
+        {
+            var saved = await _context.SaveChangesAsync();
+            return saved > 0; throw new NotImplementedException();
         }
 
         public bool TeacherExists(int TeacherId)
@@ -56,10 +61,16 @@ namespace GradeTrackerDAL.Repositories
             return _context.Teachers.Any(t => t.Id == TeacherId);
         }
 
-        public bool UpdateTeacher(Teacher teacher)
+        public async Task<bool> CreateTeacher(Teacher teacher)
+        {
+            _context.Add(teacher);
+            return await SaveAsync();
+        }
+
+        public async Task<bool> UpdateTeacher(Teacher teacher)
         {
             _context.Update(teacher);
-            return Save();
+            return await SaveAsync();
         }
     }
 }

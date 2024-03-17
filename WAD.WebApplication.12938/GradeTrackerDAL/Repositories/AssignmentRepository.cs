@@ -23,7 +23,7 @@ namespace GradeTrackerDAL.Repositories
 
         public bool AssignmentExists(int AssignmentId)
         {
-            return _context.Students.Any(a => a.Id == AssignmentId);
+            return _context.Assignments.Any(a => a.AssignmentId == AssignmentId);
         }
 
         public bool CreateAssignment(Assignment assignment)

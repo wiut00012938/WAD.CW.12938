@@ -3,6 +3,8 @@ using GradeTrackerDAL.Data;
 using GradeTrackerDAL.DTO;
 using GradeTrackerDAL.Models;
 using GradeTrackerDAL.Repositories;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,14 +14,84 @@ namespace GradeTrackerAPI.Controllers
     [ApiController]
     public class TeacherController : Controller
     {
+        private readonly UserManager<AppUser> _userManager;
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
 
-        public TeacherController(ITeacherRepository teacherRepository, IMapper mapper)
+        public TeacherController(ITeacherRepository teacherRepository, IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _teacherRepository = teacherRepository;
             _mapper = mapper;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
+        [AllowAnonymous]
+        [Route("register")]
+        [HttpPost]
+        public async Task<IActionResult> Register(TeacherDto teacherDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await _userManager.FindByEmailAsync(teacherDto.User.EmailAddress);
+            if (user != null)
+            {
+                ModelState.AddModelError("", "There is an account with the mentioned email");
+                return StatusCode(500, ModelState);
+            }
+            var newUser = new AppUser()
+            {
+                Email = teacherDto.User.EmailAddress,
+                UserName = teacherDto.User.EmailAddress,
+                FirstName = teacherDto.User.FirstName,
+                LastName = teacherDto.User.LastName,
+                ProfileImage = teacherDto.User.ProfileImage
+            };
+            var newUserResponse = await _userManager.CreateAsync(newUser, teacherDto.User.Password);
+            if (newUserResponse.Succeeded)
+                await _userManager.AddToRoleAsync(newUser, UserRoles.Teacher);
+            var teacher = _mapper.Map<Teacher>(teacherDto);
+            teacher.User = await _userManager.FindByEmailAsync(teacherDto.User.EmailAddress);
+            if (!await _teacherRepository.CreateTeacher(teacher))
+                {
+                    ModelState.AddModelError("", "Something went wrong while savin");
+                    return StatusCode(500, ModelState);
+                }
+
+            return Ok("Successfully Registered");
+        }
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(Teacher))]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> Login(string Email, string Password)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var user = await _userManager.FindByEmailAsync(Email);
+            if (user != null)
+            {
+                //User is found, check password
+                var passworkCheck = await _userManager.CheckPasswordAsync(user, Password);
+                if (passworkCheck)
+                {
+                    //Password corect, sign in
+                    var result = await _signInManager.PasswordSignInAsync(user, Password, false, false);
+                    if (result.Succeeded)
+                    {
+                        return Ok(_mapper.Map < TeacherDto >(_teacherRepository.GetTeacherByUser(user.UserName)));
+                    }
+                }
+                ModelState.AddModelError("", "Wrong email or password");
+                return StatusCode(500, ModelState);
+        }
+            return NotFound();
+        }
+
         [HttpGet("{TeacherId}")]
         [ProducesResponseType(200, Type = typeof(Teacher))]
         [ProducesResponseType(400)]
@@ -49,34 +121,11 @@ namespace GradeTrackerAPI.Controllers
 
             return Ok(modules);
         }
-        [HttpPost]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(400)]
-        public IActionResult CreateTeacher([FromBody] TeacherDto teacherCreate)
-        {
-            if (teacherCreate == null)
-                return BadRequest(ModelState);
-
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var teacher = _mapper.Map<Teacher>(teacherCreate);
-
-            
-
-            if (!_teacherRepository.CreateTeacher(teacher))
-            {
-                ModelState.AddModelError("", "Something went wrong while savin");
-                return StatusCode(500, ModelState);
-            }
-
-            return Ok("Successfully created");
-        }
         [HttpPut("{TeacherId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateTeacher(int TeacherId, [FromBody] TeacherDto teacherUpdate)
+        public async Task<IActionResult> UpdateTeacher(int TeacherId, [FromBody] TeacherDto teacherUpdate)
         {
             if (teacherUpdate == null)
                 return BadRequest(ModelState);
@@ -92,7 +141,7 @@ namespace GradeTrackerAPI.Controllers
 
             var teachermap = _mapper.Map<Teacher>(teacherUpdate);
 
-            if (!_teacherRepository.UpdateTeacher(teachermap))
+            if (!await _teacherRepository.UpdateTeacher(teachermap))
             {
                 ModelState.AddModelError("", "Something went wrong updating teacher");
                 return StatusCode(500, ModelState);

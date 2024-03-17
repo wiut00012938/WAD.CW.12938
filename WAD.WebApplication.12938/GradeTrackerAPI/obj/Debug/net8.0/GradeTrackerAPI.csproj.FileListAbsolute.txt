@@ -276,3 +276,10 @@ C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\obj\Debug\net8.0\GradeTrackerAPI.genruntimeconfig.cache
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\obj\Debug\net8.0\ref\GradeTrackerAPI.dll
 C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\User\OneDrive\Документы\GitHub\WAD.CW.12938\WAD.WebApplication.12938\GradeTrackerAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
