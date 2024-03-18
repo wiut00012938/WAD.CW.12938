@@ -1,4 +1,4 @@
-<div class="m-5">
+<!--<div class="m-5">
   <table mat-table [dataSource]="items" class="mat-elevation-z8 ">
     <ng-container matColumnDef="moduleId">
       <th mat-header-cell *matHeaderCellDef> Module ID </th>
@@ -23,4 +23,42 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>-->
+
+<div class="container mx-auto py-8">
+  <h1 class="text-4xl font-bold mb-4">Welcome to Student Grade Tracker</h1>
+  <div class="flex items-center mb-4">
+    <img src="https://static.vecteezy.com/system/resources/previews/011/849/062/original/online-learning-icon-online-education-icon-symbol-school-illustration-on-isolated-background-free-vector.jpg" alt="Logo" class="h-12 w-12 mr-4">
+    <p class="text-lg">This is a Student Grade Tracker where teachers can manage modules, create assignments, add students to modules, and assign grades.</p>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="bg-blue-200 p-4 rounded-lg flex items-center">
+      <div class="text-left mr-4">
+        <h2 class="text-xl font-bold mb-2">Manage Modules</h2>
+        <p>Teachers can easily manage their modules, add new modules, edit existing ones, and delete outdated ones.</p>
+      </div>
+      <img src="https://static.thenounproject.com/png/2409451-200.png" alt="Manage Modules" class="h-12 w-12">
+    </div>
+    <div class="bg-blue-200 p-4 rounded-lg flex items-center">
+      <div class="text-left mr-4">
+        <h2 class="text-xl font-bold mb-2">Create Assignments</h2>
+        <p>Create assignments for students within each module. Specify deadlines, instructions, and grading criteria.</p>
+      </div>
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/012/958/746/small_2x/3d-checklist-and-pencil-on-transparent-confirmed-or-approved-document-icon-beige-clipboard-with-paper-sheets-with-check-marks-symbol-cartoon-icon-minimal-style-3d-render-with-clipping-path-png.png" alt="Create Assignments" class="h-12 w-12">
+    </div>
+    <div class="bg-blue-200 p-4 rounded-lg flex items-center">
+      <div class="text-left mr-4">
+        <h2 class="text-xl font-bold mb-2">Add Students</h2>
+        <p>Add students to specific modules, making it easier to manage student assignments and grades within each class.</p>
+      </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/5850/5850276.png" alt="Add Students" class="h-12 w-12">
+    </div>
+    <div class="bg-blue-200 p-4 rounded-lg flex items-center">
+      <div class="text-left mr-4">
+        <h2 class="text-xl font-bold mb-2">Assign Grades</h2>
+        <p>Effortlessly assign grades to student submissions. Keep track of grades and student progress throughout the semester.</p>
+      </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/5231/5231793.png" alt="Assign Grades" class="h-12 w-12">
+    </div>
+  </div>
 </div>

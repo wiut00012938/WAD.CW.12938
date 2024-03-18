@@ -1,0 +1,30 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Sign in to your account
+            </h2>
+        </div>
+        <form class="mt-8 flex flex-col items-center">
+            <div class="mb-4 w-full">
+                <mat-form-field appearance="fill" class="w-full">
+                    <mat-label>Email address</mat-label>
+                    <input matInput type="email" name="email" [(ngModel)]="LoginCredentials.userName" required>
+                </mat-form-field>
+            </div>
+
+            <div class="mb-4 w-full">
+                <mat-form-field appearance="fill" class="w-full">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" name="password" [(ngModel)]="LoginCredentials.password" required>
+                </mat-form-field>
+            </div>
+
+            <div class="w-full">
+                <button mat-raised-button color="primary" type="submit" (click) = "login()">
+                    Sign in
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

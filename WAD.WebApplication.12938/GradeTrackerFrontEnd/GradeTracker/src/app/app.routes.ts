@@ -3,6 +3,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ModuleDetailsComponent } from './components/module-details/module-details.component';
 import { ModuleDeleteComponent } from './components/module-delete/module-delete.component';
 import { ModuleEditComponent } from './components/module-edit/module-edit.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
     {
@@ -14,15 +16,23 @@ export const routes: Routes = [
         component:HomeComponent
     },
     {
-        path:"edit/:id",
+        path: "login",
+        component: LoginComponent
+    },
+    {
+        path: "register",
+        component: RegisterComponent
+    },
+    {
+        path:"module/edit/:id",
         component:ModuleEditComponent
     },
     {
-        path:"details/:id",
+        path:"module/details/:id",
         component:ModuleDetailsComponent
     },
     {
-        path:"delete/:id",
+        path:"module/delete/:id",
         component:ModuleDeleteComponent
     }
 
