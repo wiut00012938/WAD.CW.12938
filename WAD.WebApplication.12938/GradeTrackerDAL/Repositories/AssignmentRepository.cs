@@ -45,7 +45,7 @@ namespace GradeTrackerDAL.Repositories
 
         public ICollection<Grade> GetGradesByAssignment(int AssignmentId)
         {
-            return _context.Grades.Where(a => a.Assignment.AssignmentId == AssignmentId).ToList();
+            return _context.Grades.Where(a => a.Assignment.AssignmentId == AssignmentId).Include(s => s.Student.User).ToList();
         }
 
         public bool Save()

@@ -33,7 +33,7 @@ namespace GradeTrackerDAL.Repositories
 
         public ModuleStudent GetModelStudent(int StudentId, int ModuleId)
         {
-            return _context.ModuleStudents.Where(a => a.StudentId == StudentId).Where(m => m.ModuleId == ModuleId).FirstOrDefault();
+            return _context.ModuleStudents.Where(m => m.ModuleId == ModuleId).FirstOrDefault();
         }
 
         public ICollection<ModuleStudent> GetStudentsFromModule(int ModuleId)

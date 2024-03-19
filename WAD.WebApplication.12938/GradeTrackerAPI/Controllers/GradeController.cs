@@ -30,7 +30,7 @@ namespace GradeTrackerAPI.Controllers
             {
                 return NotFound();
             }
-            var grade = _mapper.Map<GradeDto>(_gradeRepository.GetGrade(GradeId));
+            var grade = _gradeRepository.GetGrade(GradeId);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);

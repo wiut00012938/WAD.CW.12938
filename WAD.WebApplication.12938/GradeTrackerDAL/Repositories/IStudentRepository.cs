@@ -9,6 +9,7 @@ namespace GradeTrackerDAL.Repositories
 {
     public interface IStudentRepository
     {
+        ICollection<Student> GetAllStudents();
         Student GetStudent(int id);
         Student GetStudentByUser(string username);
         ICollection<ModuleStudent> GetModulesByStudent(int StudentId);

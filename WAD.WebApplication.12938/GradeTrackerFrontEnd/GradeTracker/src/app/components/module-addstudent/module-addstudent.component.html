@@ -1,0 +1,16 @@
+<div class="flex justify-center items-center h-screen">
+    <form class="w-full max-w-md" (ngSubmit)="submit()">
+      <div class="mb-6">
+        <label for="selectedStudent" class="block text-gray-700 text-sm font-bold mb-2">Select a Student</label>
+        <div class="relative">
+          <select id="selectedStudent" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" [(ngModel)]="selectedStudentId" name="selectedStudentId">
+            <option *ngFor="let student of newStudents" [value]="student.id">{{ student.user.firstName }} {{ student.user.lastName }}</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 8.586V7a1 1 0 1 1 2 0v1.586l1.707-1.707a1 1 0 0 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L5 8.586zM5 11.414l-1.707-1.707a1 1 0 0 1 1.414-1.414L8 10.586V12a1 1 0 1 1-2 0v-1.586l-1.707 1.707a1 1 0 1 1-1.414-1.414l3-3a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1-1.414 1.414L5 11.414z"/></svg>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+    </form>
+  </div>

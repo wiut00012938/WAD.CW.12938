@@ -1,0 +1,27 @@
+<div class="container mx-auto">
+  <img src="{{ emptyTeacher.user.profileImage }}" alt="Profile Image" class="w-40 h-40 rounded-full mx-auto mb-4">
+  <div class="mt-8 text-center">
+    <h1 class="text-3xl font-bold">Hello {{ emptyTeacher.user.firstName }} {{ emptyTeacher.user.lastName }}</h1>
+    <h2 class="text-lg font-semibold">{{emptyTeacher.teacherBackground}}</h2>
+    <p class="mt-4">What will we do today?</p>
+  </div>
+
+
+  <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <button mat-raised-button color="primary" class="bg-blue-500 text-white shadow-md rounded-md p-4 transition-transform hover:-translate-y-1 hover:shadow-lg" (click)="onLeadingModulesClicked()">
+      <h2 class="text-lg font-semibold mb-2">Manage Modules</h2>
+      <p class="text-sm text-white text-center">Manage and organize course modules</p>
+    </button>
+  
+    <button mat-raised-button color="primary" class="bg-blue-500 text-white shadow-md rounded-md p-4 transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <h2 class="text-lg font-semibold mb-2">Check Assignments</h2>
+      <p class="text-sm text-white text-center">View and manage student assignments</p>
+    </button>
+  
+    <button mat-raised-button color="primary" class="bg-blue-500 text-white shadow-md rounded-md p-4 transition-transform hover:-translate-y-1 hover:shadow-lg">
+      <h2 class="text-lg font-semibold mb-2">Check Grades</h2>
+      <p class="text-sm text-white text-center">Review and analyze student grades</p>
+    </button>
+  </div>
+</div>
+  

@@ -90,6 +90,17 @@ namespace GradeTrackerAPI.Controllers
             }
             return NotFound();
         }
+        [HttpGet("students/allstudents")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Student>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetStudent()
+        {
+            var student = _studentRepository.GetAllStudents().ToList();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Ok(student);
+        }
         [HttpGet("{StudentId}")]
         [ProducesResponseType(200, Type = typeof(Student))]
         [ProducesResponseType(400)]

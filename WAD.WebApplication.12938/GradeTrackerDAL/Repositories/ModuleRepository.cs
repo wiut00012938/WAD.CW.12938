@@ -48,9 +48,9 @@ namespace GradeTrackerDAL.Repositories
             return _context.Modules.Where(m => m.ModuleId == id).Include(t => t.Teacher).FirstOrDefault();
         }
 
-        public ICollection<ModuleStudent> GetStudentsByModule(int studentId)
+        public ICollection<ModuleStudent> GetStudentsByModule(int moduleId)
         {
-            return _context.ModuleStudents.Where(m => m.Student.Id  == studentId).ToList();
+            return _context.ModuleStudents.Where(m => m.Module.ModuleId  == moduleId).Include(m => m.Student.User).Include(m => m.Module).ToList();
         }
 
         public bool ModuleExists(int moduleId)

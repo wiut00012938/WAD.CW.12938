@@ -55,8 +55,7 @@ namespace GradeTrackerAPI.Controllers
             if (!_moduleRepository.ModuleExists(ModuleId))
                 return NotFound();
 
-            var modules = _mapper.Map<List<ModuleStudent>>(
-                _moduleRepository.GetStudentsByModule(ModuleId));
+            var modules = _moduleRepository.GetStudentsByModule(ModuleId).ToList();
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -90,7 +89,7 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpPut("{ModuleId}")]
         [ProducesResponseType(400)]
@@ -117,7 +116,7 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong updating Module");
                 return StatusCode(500, ModelState);
             }
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpDelete("{ModuleId}")]
         [ProducesResponseType(400)]
@@ -148,13 +147,13 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong deleting Module");
             }
 
-            return Ok("Sucessfully Deleted");
+            return NoContent();
         }
         [HttpDelete("/DeleteModulesByTeacher/{TeacherId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public async Task<IActionResult> DeleteReviewsByReviewer(int TeacherId)
+        public async Task<IActionResult> DeleteModulesByTeacher(int TeacherId)
         {
             if (!_teacherRepository.TeacherExists(TeacherId))
                 return NotFound();

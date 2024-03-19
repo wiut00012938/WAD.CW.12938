@@ -5,6 +5,12 @@ import { ModuleDeleteComponent } from './components/module-delete/module-delete.
 import { ModuleEditComponent } from './components/module-edit/module-edit.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { TeacherHomeComponent } from './components/teacher-home/teacher-home.component';
+import { TeacherModuleComponent } from './components/teacher-module/teacher-module.component';
+import { ModuleCreateComponent } from './components/module-create/module-create.component';
+import { ModuleAddstudentComponent } from './components/module-addstudent/module-addstudent.component';
+import { ModuleDeletestudentComponent } from './components/module-deletestudent/module-deletestudent.component';
+import { TeacherAssignmentComponent } from './components/teacher-assignment/teacher-assignment.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +22,10 @@ export const routes: Routes = [
         component:HomeComponent
     },
     {
+        path:"teacher-home/:id",
+        component:TeacherHomeComponent
+    },
+    {
         path: "login",
         component: LoginComponent
     },
@@ -24,7 +34,15 @@ export const routes: Routes = [
         component: RegisterComponent
     },
     {
-        path:"module/edit/:id",
+        path: "teacher/:id/modules",
+        component: TeacherModuleComponent
+    },
+    {
+        path: "module/create/:id",
+        component: ModuleCreateComponent
+    },
+    {
+        path:"module/:teacherid/edit/:id",
         component:ModuleEditComponent
     },
     {
@@ -32,8 +50,20 @@ export const routes: Routes = [
         component:ModuleDetailsComponent
     },
     {
-        path:"module/delete/:id",
+        path:"module/:teacherid/delete/:id",
         component:ModuleDeleteComponent
+    },
+    {
+        path: "module/:id/student/add",
+        component:ModuleAddstudentComponent
+    },
+    {
+        path:"module/:moduleid/student/delete/:id",
+        component:ModuleDeletestudentComponent
+    },
+    {
+        path:"module/:id/assignments",
+        component:TeacherAssignmentComponent
     }
 
 ];

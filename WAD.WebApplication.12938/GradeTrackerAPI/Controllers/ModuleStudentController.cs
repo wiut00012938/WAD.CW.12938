@@ -41,9 +41,9 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully included a student to the module");
+            return NoContent();
         }
-        [HttpDelete("{ModuleId}")]
+        [HttpDelete]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -67,7 +67,7 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully included a student to the module");
+            return NoContent();
         }
 
         [HttpDelete("/DeleteStudentsFromModule/{ModuleId}")]

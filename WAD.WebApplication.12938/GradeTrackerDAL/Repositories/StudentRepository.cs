@@ -31,13 +31,13 @@ namespace GradeTrackerDAL.Repositories
 
         public ICollection<Grade> GetGradesByStudent(int StudentId)
         {
-            return _context.Grades.Where(s => s.Student.Id == StudentId).ToList();
+            return _context.Grades.Where(s => s.Student.Id == StudentId).Include(a => a.Assignment).ToList();
         }
 
         public ICollection<ModuleStudent> GetModulesByStudent(int StudentId)
         {
-            return _context.ModuleStudents.Where(s => s.Student.Id == StudentId).ToList();
-        }
+            return _context.ModuleStudents.Where(s => s.Student.Id == StudentId).Include(m => m.Module).ToList();
+        }   
 
         public Student GetStudent(int id)
         {
@@ -77,6 +77,11 @@ namespace GradeTrackerDAL.Repositories
         {
             _context.Update(student);
             return await SaveAsync();
+        }
+
+        public ICollection<Student> GetAllStudents()
+        {
+            return _context.Students.Include(u => u.User).ToList();
         }
     }
 }

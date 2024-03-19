@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit{
   studentId: number = 0;
   constructor(){}
   ngOnInit(): void{
-    this.isLoggedIn = this.GradeTrackerService.isLoggedIn;
+    this.isLoggedIn = this.GradeTrackerService.authenticated;
   }
   router = inject(Router)
 

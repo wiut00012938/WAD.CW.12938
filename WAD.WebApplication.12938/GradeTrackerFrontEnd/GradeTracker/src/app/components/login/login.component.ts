@@ -34,12 +34,11 @@ export class LoginComponent {
           return of(null); 
         })
       )
-      .subscribe((teachers: Teacher[] | null) => {
-        if (teachers != null) {
-          const teacher = teachers[0]; 
+      .subscribe((teacher: Teacher | null) => {
+        if (teacher != null) {
+          console.log(teacher)
           alert("Successfully Logged in");
-          this.GradeTrackerService.isLoggedIn = true;
-          this.router.navigateByUrl("home"); 
+          this.router.navigateByUrl(`/teacher-home/${teacher.id}`); 
         } else {
           alert("Login failed. Please try again."); 
         }

@@ -34,7 +34,7 @@ namespace GradeTrackerDAL.Repositories
 
         public Grade GetGrade(int id)
         {
-            return _context.Grades.Where(g => g.GradeId == id).Include(s => s.Student).Include(a => a.Assignment).FirstOrDefault();
+            return _context.Grades.Where(g => g.GradeId == id).Include(s => s.Student.User).Include(a => a.Assignment).FirstOrDefault();
         }
 
         public bool GradeExists(int GradeId)

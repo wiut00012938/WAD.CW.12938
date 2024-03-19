@@ -1,0 +1,29 @@
+<div class="m-5">
+    <div class="flex justify-center mb-4">
+        <button mat-raised-button color="primary" (click)="CreateAssignment()">Create</button>
+    </div>
+  <table mat-table [dataSource]="items" class="mat-elevation-z8 ">
+    <ng-container matColumnDef="assignmentId">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.assignmentId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="assignmentName">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.assignmentName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="assignmentDescription">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.assignmentDescription}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element" class="space-x-4"> 
+            <button mat-raised-button color="primary" (click)="EditClicked(element.assignmentId)">Edit</button>
+            <button mat-raised-button color="accent" (click)="DetailsClicked(element.assignmentId)">Details</button>
+            <button mat-raised-button color="warn" (click)="DeleteClicked(element.assignmentId)">Delete</button>  
+        </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

@@ -559,7 +559,7 @@
   {
     "ContainingType": "GradeTrackerAPI.Controllers.ModuleStudentController",
     "Method": "DeleteStudentFromModule",
-    "RelativePath": "api/ModuleStudent/{ModuleId}",
+    "RelativePath": "api/ModuleStudent",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -573,11 +573,6 @@
         "Name": "StudentId",
         "Type": "System.Int32",
         "IsRequired": false
-      },
-      {
-        "Name": "ModuleId",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": [
@@ -815,6 +810,35 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "GradeTrackerAPI.Controllers.StudentController",
+    "Method": "GetStudent",
+    "RelativePath": "api/Student/students/allstudents",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.ICollection\u00601[[GradeTrackerDAL.Models.Student, GradeTrackerDAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
     "ContainingType": "GradeTrackerAPI.Controllers.TeacherController",
     "Method": "Login",
     "RelativePath": "api/Teacher",
@@ -1008,7 +1032,7 @@
   },
   {
     "ContainingType": "GradeTrackerAPI.Controllers.ModuleController",
-    "Method": "DeleteReviewsByReviewer",
+    "Method": "DeleteModulesByTeacher",
     "RelativePath": "DeleteModulesByTeacher/{TeacherId}",
     "HttpMethod": "DELETE",
     "IsController": true,

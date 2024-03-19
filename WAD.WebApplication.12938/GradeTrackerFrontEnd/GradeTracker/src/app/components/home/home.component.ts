@@ -16,11 +16,7 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   GradeTrackerService = inject(ServiceGradetrackerService)
   router = inject(Router)
-  items:Module[]=[]
-  ngOnInit(){
-    this.GradeTrackerService.getAllModulesByTeacher(1003).subscribe((result) => {this.items = result})
-  }
-  displayedColumns: string[] = ['moduleId','moduleName','moduleDescription','Actions']
+  
   EditClicked(moduleId:number){
     console.log(moduleId, "From Edit");
     this.router.navigateByUrl("/edit/"+moduleId)

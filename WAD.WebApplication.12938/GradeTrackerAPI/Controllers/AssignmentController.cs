@@ -41,8 +41,7 @@ namespace GradeTrackerAPI.Controllers
             if (!_assignmentRepository.AssignmentExists(AssignmentId))
                 return NotFound();
 
-            var grades = _mapper.Map<List<GradeDto>>(
-                _assignmentRepository.GetGradesByAssignment(AssignmentId));
+            var grades = _assignmentRepository.GetGradesByAssignment(AssignmentId);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
