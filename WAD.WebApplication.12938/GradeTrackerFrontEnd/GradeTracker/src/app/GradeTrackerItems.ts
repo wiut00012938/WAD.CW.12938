@@ -64,3 +64,47 @@ export interface GradeDto{
   score: number,
   feedback: string
 }
+
+export interface GradeStudent{
+  gradeId:number,
+  score:number,
+  feedback:string,
+  assignment:{
+    assignmentId:number,
+    assignmentName:string,
+    assignmentDescription:string,
+    module:{
+      moduleId:number,
+      moduleName:string,
+      moduleDescription:string
+    }
+  }
+}
+
+export interface TeacherForm{
+  id: number,
+  teacherBackground: string,
+  user: {
+    id: number,
+    firstName: string,
+    lastName: string,
+    profileImage: string,
+    emailAddress:string,
+    password:string,
+    confirmPassword:string
+  }
+}
+
+export interface StudentForm{
+  id: number,
+  enrolledModulesNum: number,
+  user: {
+    id: number,
+    firstName: string,
+    lastName: string,
+    profileImage: string,
+    emailAddress:string,
+    password:string,
+    confirmPassword:string
+  }
+}

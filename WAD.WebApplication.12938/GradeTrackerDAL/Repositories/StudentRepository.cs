@@ -31,7 +31,7 @@ namespace GradeTrackerDAL.Repositories
 
         public ICollection<Grade> GetGradesByStudent(int StudentId)
         {
-            return _context.Grades.Where(s => s.Student.Id == StudentId).Include(a => a.Assignment).ToList();
+            return _context.Grades.Where(s => s.Student.Id == StudentId).Include(a => a.Assignment).Include(m => m.Assignment.Module).ToList();
         }
 
         public ICollection<ModuleStudent> GetModulesByStudent(int StudentId)

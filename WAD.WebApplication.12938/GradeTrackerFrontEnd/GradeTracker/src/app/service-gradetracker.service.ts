@@ -1,7 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Module, ModuleStudent, Teacher, Student, Assignment, Grade, GradeDto} from './GradeTrackerItems';
+import {Module, ModuleStudent, Teacher, Student, Assignment, Grade, GradeDto, GradeStudent, TeacherForm, StudentForm} from './GradeTrackerItems';
 import { BehaviorSubject, Observable, map } from 'rxjs';
+import { TeacherAssignmentComponent } from './components/teacher-assignment/teacher-assignment.component';
 
 
 @Injectable({
@@ -29,6 +30,23 @@ export class ServiceGradetrackerService {
     const encodedUsername = encodeURIComponent(username);
     const encodedPassword = encodeURIComponent(password);
     return this.httpClient.get<Teacher>(`http://localhost:5057/api/Teacher?Email=${encodedUsername}&Password=${encodedPassword}`)
+  }
+  StudentLogin(username:string, password:string){
+    const encodedUsername = encodeURIComponent(username);
+    const encodedPassword = encodeURIComponent(password);
+    return this.httpClient.get<Student>(`http://localhost:5057/api/Student?Email=${encodedUsername}&Password=${encodedPassword}`)
+  }
+  TeacherRegister(item:TeacherForm){
+      return this.httpClient.post<TeacherForm>("http://localhost:5057/api/Teacher/register",item)
+  }
+  StudentRegister(item:Student){
+    return this.httpClient.post<StudentForm>("http://localhost:5057/api/Student/register",item)
+  }
+  GetAllModulesByStudent(id:number){
+    return this.httpClient.get<ModuleStudent[]>(`http://localhost:5057/api/Student/${id}/modules`)
+  }
+  GetAllGradesByStudent(id:number){
+    return this.httpClient.get<GradeStudent[]>(`http://localhost:5057/api/Student/${id}/grades`)
   }
 
   getTeacherById(id:number){

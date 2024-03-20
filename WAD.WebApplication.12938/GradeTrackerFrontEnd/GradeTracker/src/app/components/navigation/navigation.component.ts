@@ -55,4 +55,10 @@ export class NavigationComponent implements OnInit{
   onRegisterClicked() {
     this.router.navigateByUrl("/register")
   }
+  onStudentLoginClicked(){
+    this.router.navigateByUrl("/login-student")
+  }
+  onStudentRegisterClicked(){
+    this.router.navigateByUrl("/register-student")
+  }
 }

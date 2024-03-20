@@ -1,1 +1,47 @@
-<p>register works!</p>
+<div class="flex justify-center items-center h-screen">
+    <form class="w-full max-w-lg">
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Teacher Background</mat-label>
+          <input matInput type="text" placeholder="Enter your teacher background" [(ngModel)]="createTeacher.teacherBackground" name="teacherBackground" required>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>First Name</mat-label>
+          <textarea matInput placeholder="Enter your First Name" [(ngModel)]="createTeacher.user.firstName" name="firstname" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Last Name</mat-label>
+          <textarea matInput placeholder="Enter your Last Name" [(ngModel)]="createTeacher.user.lastName" name="lastname" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Image Link</mat-label>
+          <textarea matInput placeholder="Enter a link to your photo in url format" [(ngModel)]="createTeacher.user.profileImage" name="photo" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Email</mat-label>
+          <textarea matInput placeholder="Email will be your username" [(ngModel)]="createTeacher.user.emailAddress" name="email" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Password</mat-label>
+          <textarea matInput placeholder="Create a password" [(ngModel)]="createTeacher.user.password" name="password" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Confirm Password</mat-label>
+          <textarea matInput placeholder="Confirm a password" [(ngModel)]="createTeacher.user.confirmPassword" name="confirmpassword" required></textarea>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit" (click)="create()">Create</button>
+    </form>
+  </div>

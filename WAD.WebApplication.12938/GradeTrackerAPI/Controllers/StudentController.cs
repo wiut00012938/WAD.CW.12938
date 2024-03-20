@@ -63,7 +63,7 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully Registered");
+            return NoContent();
         }
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(Student))]
@@ -116,8 +116,7 @@ namespace GradeTrackerAPI.Controllers
             if (!_studentRepository.StudentExists(StudentId))
                 return NotFound();
 
-            var grades = _mapper.Map<List<GradeDto>>(
-                _studentRepository.GetGradesByStudent(StudentId));
+            var grades = _studentRepository.GetGradesByStudent(StudentId);
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -141,7 +140,7 @@ namespace GradeTrackerAPI.Controllers
 
         [HttpPut("{StudentId}")]
         [ProducesResponseType(400)]
-        [ProducesResponseType(204)]
+        [ProducesResponseType(204)]  
         [ProducesResponseType(404)]
         public async Task<IActionResult> UpdateStudent(int StudentId, [FromBody] StudentDto studentUpdate)
         {
@@ -153,18 +152,16 @@ namespace GradeTrackerAPI.Controllers
 
             if (!_studentRepository.StudentExists(StudentId))
                 return NotFound();
-
-            if (!ModelState.IsValid)
-                return BadRequest();
-
+           
             var studentmap = _mapper.Map<Student>(studentUpdate);
+            studentmap.User = await _userManager.FindByEmailAsync(studentUpdate.User.EmailAddress);
 
             if (!await _studentRepository.UpdateStudent(studentmap))
             {
                 ModelState.AddModelError("", "Something went wrong updating Student");
                 return StatusCode(500, ModelState);
             }
-            return Ok("Successfully created");
+            return Ok("Successfully updated");
         }
         [HttpDelete("{StudentId}")]
         [ProducesResponseType(400)]

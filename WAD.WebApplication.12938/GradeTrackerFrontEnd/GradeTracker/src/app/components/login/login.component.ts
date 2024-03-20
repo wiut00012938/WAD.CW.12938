@@ -36,7 +36,6 @@ export class LoginComponent {
       )
       .subscribe((teacher: Teacher | null) => {
         if (teacher != null) {
-          console.log(teacher)
           alert("Successfully Logged in");
           this.router.navigateByUrl(`/teacher-home/${teacher.id}`); 
         } else {

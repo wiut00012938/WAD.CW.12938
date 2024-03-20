@@ -24,7 +24,6 @@ export class ModuleDeleteComponent {
   ngOnInit(){
     this.GradeTrackerService.ModuleDetails(this.activeRoute.snapshot.params["id"]).subscribe((resultedItem)=>{
       this.deleteModule = resultedItem
-      console.log(this.deleteModule)
     });
   }
   onDeleteButtonClick(){

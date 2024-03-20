@@ -65,7 +65,7 @@ namespace GradeTrackerAPI.Controllers
                     return StatusCode(500, ModelState);
                 }
 
-            return Ok("Successfully Registered");
+            return NoContent();
         }
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(Teacher))]
@@ -132,10 +132,9 @@ namespace GradeTrackerAPI.Controllers
             if (!_teacherRepository.TeacherExists(TeacherId))
                 return NotFound();
 
-            if (!ModelState.IsValid)
-                return BadRequest();
 
             var teachermap = _mapper.Map<Teacher>(teacherUpdate);
+            teachermap.User = await _userManager.FindByEmailAsync(teacherUpdate.User.EmailAddress);
 
             if (!await _teacherRepository.UpdateTeacher(teachermap))
             {

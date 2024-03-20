@@ -1072,7 +1072,7 @@
   },
   {
     "ContainingType": "GradeTrackerAPI.Controllers.ModuleStudentController",
-    "Method": "DeleteReviewsByReviewer",
+    "Method": "DeleteStudentFromModule",
     "RelativePath": "DeleteStudentsFromModule/{ModuleId}",
     "HttpMethod": "DELETE",
     "IsController": true,

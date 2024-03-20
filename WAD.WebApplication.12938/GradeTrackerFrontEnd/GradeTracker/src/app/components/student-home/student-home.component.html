@@ -1,1 +1,20 @@
-<p>student-home works!</p>
+<div class="container mx-auto">
+    <img src="{{ student.user.profileImage }}" alt="Profile Image" class="w-40 h-40 rounded-full mx-auto mb-4">
+    <div class="mt-8 text-center">
+      <h1 class="text-3xl font-bold">Hello {{ student.user.firstName }} {{ student.user.lastName }}</h1>
+      <p class="mt-4">What will we do today?</p>
+    </div>
+  
+  
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <button mat-raised-button color="primary" class="bg-blue-500 text-white shadow-md rounded-md p-4 transition-transform hover:-translate-y-1 hover:shadow-lg" (click)="onModulesClicked()">
+        <h2 class="text-lg font-semibold mb-2">My modules</h2>
+        <p class="text-sm text-white text-center">See your enrolled modules</p>
+      </button>
+    
+      <button mat-raised-button color="primary" class="bg-blue-500 text-white shadow-md rounded-md p-4 transition-transform hover:-translate-y-1 hover:shadow-lg" (click)="onGradesClicked()">
+        <h2 class="text-lg font-semibold mb-2">My grades</h2>
+        <p class="text-sm text-white text-center">See your grades for different assignments</p>
+      </button>
+    </div>
+  </div>

@@ -19,6 +19,11 @@ import { GradeDeleteComponent } from './components/grade-delete/grade-delete.com
 import { GradeEditComponent } from './components/grade-edit/grade-edit.component';
 import { GradeCreateComponent } from './components/grade-create/grade-create.component';
 import { AssignmentDeleteComponent } from './components/assignment-delete/assignment-delete.component';
+import { StudentHomeComponent } from './components/student-home/student-home.component';
+import { LoginStudentComponent } from './components/login-student/login-student.component';
+import { RegisterStudentComponent } from './components/register-student/register-student.component';
+import { StudentModulesComponent } from './components/student-modules/student-modules.component';
+import { StudentGradesComponent } from './components/student-grades/student-grades.component';
 
 export const routes: Routes = [
     {
@@ -34,12 +39,32 @@ export const routes: Routes = [
         component:TeacherHomeComponent
     },
     {
+        path: "student-home/:id",
+        component:StudentHomeComponent
+    },
+    {
         path: "login",
         component: LoginComponent
     },
     {
         path: "register",
         component: RegisterComponent
+    },
+    {
+        path: "login-student",
+        component: LoginStudentComponent
+    },
+    {
+        path: "register-student",
+        component: RegisterStudentComponent
+    },
+    {
+        path: "student/:id/modules",
+        component: StudentModulesComponent
+    },
+    {
+        path: "student/:id/grades",
+        component: StudentGradesComponent
     },
     {
         path: "teacher/:id/modules",

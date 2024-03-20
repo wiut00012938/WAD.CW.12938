@@ -74,7 +74,7 @@ namespace GradeTrackerAPI.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteReviewsByReviewer(int ModuleId)
+        public IActionResult DeleteStudentFromModule(int ModuleId)
         {
             if (!_moduleRepository.ModuleExists(ModuleId))
                 return NotFound();
