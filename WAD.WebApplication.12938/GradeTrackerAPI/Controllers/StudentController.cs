@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GradeTrackerAPI.Strategies;
 using GradeTrackerDAL.Data;
 using GradeTrackerDAL.DTO;
 using GradeTrackerDAL.Models;
@@ -17,13 +18,15 @@ namespace GradeTrackerAPI.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IStudentRepository _studentRepository;
         private readonly IMapper _mapper;
+        private readonly ILoginStrategy _loginStrategy;
 
-        public StudentController(IStudentRepository studentRepository, IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> singInManager)
+        public StudentController(IStudentRepository studentRepository, IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> singInManager, ILoginStrategy loginStrategy)
         {
             _userManager = userManager;
             _signInManager = singInManager;
             _studentRepository = studentRepository;
             _mapper = mapper;
+            _loginStrategy = loginStrategy;
         }
         [AllowAnonymous]
         [Route("register")]
@@ -71,24 +74,15 @@ namespace GradeTrackerAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var user = await _userManager.FindByEmailAsync(Email);
-            if (user != null)
+            var result = await _loginStrategy.Login(Email, Password);
+            if (result.IsSuccess)
             {
-                //User is found, check password
-                var passworkCheck = await _userManager.CheckPasswordAsync(user, Password);
-                if (passworkCheck)
-                {
-                    //Password corect, sign in
-                    var result = await _signInManager.PasswordSignInAsync(user, Password, false, false);
-                    if (result.Succeeded)
-                    {
-                        return Ok(_mapper.Map<StudentDto>(_studentRepository.GetStudentByUser(user.UserName)));
-                    }
-                }
-                ModelState.AddModelError("", "Wrong email or password");
-                return StatusCode(500, ModelState);
+                return Ok(result.Student);
             }
-            return NotFound();
+            else
+            {
+                return BadRequest(result.ErrorMessage);
+            }
         }
         [HttpGet("students/allstudents")]
         [ProducesResponseType(200, Type = typeof(ICollection<Student>))]

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GradeTrackerAPI.Strategies;
 using GradeTrackerDAL.Data;
 using GradeTrackerDAL.DTO;
 using GradeTrackerDAL.Models;
@@ -18,13 +19,16 @@ namespace GradeTrackerAPI.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITeacherRepository _teacherRepository;
         private readonly IMapper _mapper;
+        private readonly ILoginStrategy _loginStrategy;
 
-        public TeacherController(ITeacherRepository teacherRepository, IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+
+        public TeacherController(ITeacherRepository teacherRepository, IMapper mapper, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILoginStrategy loginStrategy)
         {
             _teacherRepository = teacherRepository;
             _mapper = mapper;
             _userManager = userManager;
             _signInManager = signInManager;
+            _loginStrategy = loginStrategy;
         }
         [AllowAnonymous]
         [Route("register")]
@@ -72,24 +76,16 @@ namespace GradeTrackerAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var user = await _userManager.FindByEmailAsync(Email);
-            if (user != null)
+            var result = await _loginStrategy.Login(Email, Password);
+            if (result.IsSuccess)
             {
-                //User is found, check password
-                var passworkCheck = await _userManager.CheckPasswordAsync(user, Password);
-                if (passworkCheck)
-                {
-                    //Password corect, sign in
-                    var result = await _signInManager.PasswordSignInAsync(user, Password, false, false);
-                    if (result.Succeeded)
-                    {
-                        return Ok(_mapper.Map < TeacherDto >(_teacherRepository.GetTeacherByUser(user.UserName)));
-                    }
-                }
-                ModelState.AddModelError("", "Wrong email or password");
-                return StatusCode(500, ModelState);
-        }
-            return NotFound();
+                return Ok(result.Teacher);
+            }
+            else
+            {
+                return BadRequest(result.ErrorMessage);
+            }
+
         }
 
         [HttpGet("{TeacherId}")]

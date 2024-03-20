@@ -1,9 +1,11 @@
+using GradeTrackerAPI.Strategies;
 using GradeTrackerDAL.Data;
 using GradeTrackerDAL.Models;
 using GradeTrackerDAL.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using System.Security.Claims;
 using System.Text.Json.Serialization;
 
@@ -21,6 +23,8 @@ builder.Services.AddScoped<IModuleRepository, ModuleRepository>();
 builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 builder.Services.AddScoped<IGradeRepository, GradeRepository>();
 builder.Services.AddScoped<IModuleStudentRepository,  ModuleStudentRepository>();
+builder.Services.AddScoped<ILoginStrategy, TeacherLoginStrategy>();
+builder.Services.AddScoped<ILoginStrategy, StudentLoginStrategy>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

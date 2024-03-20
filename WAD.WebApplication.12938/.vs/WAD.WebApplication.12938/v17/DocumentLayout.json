@@ -1,7 +1,36 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\strategies\\studentloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\strategies\\studentloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\controllers\\teachercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\strategies\\teacherloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\strategies\\teacherloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\strategies\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\strategies\\loginresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|c:\\users\\user\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\wad.cw.12938\\wad.webapplication.12938\\gradetrackerapi\\strategies\\iloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05843D4F-46DC-485B-A872-A12F124529F0}|GradeTrackerAPI\\GradeTrackerAPI.csproj|solutionrelative:gradetrackerapi\\strategies\\iloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,6 +99,97 @@
             {
               "$type": "Bookmark",
               "Name": "ST:17:0:{fabf9319-47eb-497e-b8f6-d9f73fba5f55}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Program.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Program.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:38:23.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StudentLoginStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\StudentLoginStrategy.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Strategies\\StudentLoginStrategy.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\StudentLoginStrategy.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Strategies\\StudentLoginStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:13:48.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginResult.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\LoginResult.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Strategies\\LoginResult.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\LoginResult.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Strategies\\LoginResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:09:55.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ILoginStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\ILoginStrategy.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Strategies\\ILoginStrategy.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\ILoginStrategy.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Strategies\\ILoginStrategy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:09:26.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TeacherLoginStrategy.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\TeacherLoginStrategy.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Strategies\\TeacherLoginStrategy.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Strategies\\TeacherLoginStrategy.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Strategies\\TeacherLoginStrategy.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwCsAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:07:37.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Controllers\\StudentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T08:57:35.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TeacherController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Controllers\\TeacherController.cs",
+              "RelativeDocumentMoniker": "GradeTrackerAPI\\Controllers\\TeacherController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\WAD.CW.12938\\WAD.WebApplication.12938\\GradeTrackerAPI\\Controllers\\TeacherController.cs",
+              "RelativeToolTip": "GradeTrackerAPI\\Controllers\\TeacherController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T09:29:49.985Z",
+              "EditorCaption": ""
             }
           ]
         }
