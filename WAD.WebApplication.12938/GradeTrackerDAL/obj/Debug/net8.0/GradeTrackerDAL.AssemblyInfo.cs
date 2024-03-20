@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GradeTrackerDAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ea2efc4ac44781acf7f8542a03402bff128afbe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d05e4de536e4a2ab25f361f953646ac756abbbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("GradeTrackerDAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GradeTrackerDAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -123,8 +123,7 @@
               "RelativeToolTip": "GradeTrackerDAL\\Repositories\\ModuleStudentRepository.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwCQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T16:08:31.358Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T16:08:31.358Z"
             },
             {
               "$type": "Document",
@@ -136,8 +135,7 @@
               "RelativeToolTip": "GradeTrackerAPI\\Controllers\\ModuleStudentController.cs",
               "ViewState": "AQIAADgAAAAAAAAAAAAwwFIAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T16:07:58.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T16:07:58.098Z"
             },
             {
               "$type": "Document",
@@ -149,8 +147,7 @@
               "RelativeToolTip": "GradeTrackerDAL\\Repositories\\StudentRepository.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAACPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T12:50:36.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T12:50:36.505Z"
             },
             {
               "$type": "Document",
@@ -162,8 +159,7 @@
               "RelativeToolTip": "GradeTrackerAPI\\Strategies\\StudentLoginStrategy.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACEAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T12:25:06.068Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T12:25:06.068Z"
             },
             {
               "$type": "Document",
@@ -175,8 +171,7 @@
               "RelativeToolTip": "GradeTrackerAPI\\Controllers\\StudentController.cs",
               "ViewState": "AQIAAIwAAAAAAAAAAAAuwJ0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T08:57:35.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T08:57:35.045Z"
             },
             {
               "$type": "Document",
@@ -188,8 +183,7 @@
               "RelativeToolTip": "GradeTrackerAPI\\Controllers\\TeacherController.cs",
               "ViewState": "AQIAAHAAAAAAAAAAAAAcwIkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T09:29:49.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T09:29:49.985Z"
             }
           ]
         }
