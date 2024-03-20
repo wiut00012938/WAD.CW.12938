@@ -69,13 +69,13 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpPut("{AssignmentId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult UpdateStudent(int AssignmentId, [FromBody] AssignmentDto assignmentUpdate)
+        public IActionResult UpdateAssignment(int AssignmentId, [FromBody] AssignmentDto assignmentUpdate)
         {
             if (assignmentUpdate == null)
                 return BadRequest(ModelState);
@@ -96,13 +96,13 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong updating Student");
                 return StatusCode(500, ModelState);
             }
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpDelete("{AssignmentId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public IActionResult DeleteStudent(int AssignmentId)
+        public IActionResult DeleteAssignment(int AssignmentId)
         {
             if (!_assignmentRepository.AssignmentExists(AssignmentId))
             {
@@ -119,7 +119,7 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong deleting Student");
             }
 
-            return Ok("Sucessfully Deleted");
+            return NoContent();
         }
     }
 }

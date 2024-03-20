@@ -1,0 +1,29 @@
+<div class="flex justify-center items-center h-screen">
+    <form class="w-full max-w-lg">
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Grade Score</mat-label>
+          <input matInput type="text" placeholder="Enter the Mark" [(ngModel)]="createGrade.score" name="score" required>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Feedback</mat-label>
+          <textarea matInput placeholder="Enter the Feedback" [(ngModel)]="createGrade.feedback" name="feedback" required></textarea>
+        </mat-form-field>
+      </div>
+      <div class="mb-6">
+        <label for="selectedStudent" class="block text-gray-700 text-sm font-bold mb-2">Select a Student</label>
+        <div class="relative">
+          <select id="selectedStudent" class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" [(ngModel)]="selectedStudentId" name="selectedStudentId">
+            <option *ngFor="let student of newStudents" [value]="student.student.id">{{ student.student.user.firstName }} {{ student.student.user.lastName }}</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 8.586V7a1 1 0 1 1 2 0v1.586l1.707-1.707a1 1 0 0 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 1.414-1.414L5 8.586zM5 11.414l-1.707-1.707a1 1 0 0 1 1.414-1.414L8 10.586V12a1 1 0 1 1-2 0v-1.586l-1.707 1.707a1 1 0 1 1-1.414-1.414l3-3a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1-1.414 1.414L5 11.414z"/></svg>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit" (click)="create()">Create</button>
+    </form>
+  </div>
+  

@@ -11,6 +11,14 @@ import { ModuleCreateComponent } from './components/module-create/module-create.
 import { ModuleAddstudentComponent } from './components/module-addstudent/module-addstudent.component';
 import { ModuleDeletestudentComponent } from './components/module-deletestudent/module-deletestudent.component';
 import { TeacherAssignmentComponent } from './components/teacher-assignment/teacher-assignment.component';
+import { AssignmentEditComponent } from './components/assignment-edit/assignment-edit.component';
+import { AssignmentCreateComponent } from './components/assignment-create/assignment-create.component';
+import { AssignnmentGradesComponent } from './components/assignnment-grades/assignnment-grades.component';
+import { GradeDetailsComponent } from './components/grade-details/grade-details.component';
+import { GradeDeleteComponent } from './components/grade-delete/grade-delete.component';
+import { GradeEditComponent } from './components/grade-edit/grade-edit.component';
+import { GradeCreateComponent } from './components/grade-create/grade-create.component';
+import { AssignmentDeleteComponent } from './components/assignment-delete/assignment-delete.component';
 
 export const routes: Routes = [
     {
@@ -64,6 +72,38 @@ export const routes: Routes = [
     {
         path:"module/:id/assignments",
         component:TeacherAssignmentComponent
+    },
+    {
+        path:"module/:moduleid/assignment/edit/:id",
+        component:AssignmentEditComponent
+    },
+    {
+        path:"module/:moduleid/assignment/delete/:id",
+        component:AssignmentDeleteComponent
+    },
+    {
+        path:"module/:id/assignment/create",
+        component:AssignmentCreateComponent
+    },
+    {
+        path:"module/:moduleid/assignment/:id/grades",
+        component: AssignnmentGradesComponent
+    },
+    {
+        path:"grade/details/:id",
+        component:GradeDetailsComponent
+    },
+    {
+        path:"module/:moduleid/assignment/:assignmentid/grade/edit/:id",
+        component:GradeEditComponent
+    },
+    {
+        path:"module/:moduleid/assignment/:assignmentid/grade/delete/:id",
+        component:GradeDeleteComponent
+    },
+    {
+        path:"module/:moduleid/assignment/:assignmentid/grade/create",
+        component:GradeCreateComponent
     }
 
 ];

@@ -62,7 +62,7 @@ namespace GradeTrackerAPI.Controllers
                 return StatusCode(500, ModelState);
             }
 
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpPut("{GradeId}")]
         [ProducesResponseType(400)]
@@ -89,7 +89,7 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong updating Student");
                 return StatusCode(500, ModelState);
             }
-            return Ok("Successfully created");
+            return NoContent();
         }
         [HttpDelete("{GradeId}")]
         [ProducesResponseType(400)]
@@ -112,7 +112,7 @@ namespace GradeTrackerAPI.Controllers
                 ModelState.AddModelError("", "Something went wrong deleting Student");
             }
 
-            return Ok("Sucessfully Deleted");
+            return NoContent();
         }
 
     }

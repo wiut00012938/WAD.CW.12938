@@ -24,15 +24,15 @@ export class TeacherAssignmentComponent {
   }
   displayedColumns: string[] = ['assignmentId','assignmentName','assignmentDescription','Actions']
   EditClicked(assignmentId:number){
-    this.router.navigateByUrl("/module/" + this.activeRoute.snapshot.params["id"]+"/assignments/edit/"+ assignmentId)
+    this.router.navigateByUrl("/module/" + this.activeRoute.snapshot.params["id"] +"/assignment/edit/"+ assignmentId)
   }
   DetailsClicked(assignmentId:number){
-    this.router.navigateByUrl("/module/assignments/details/"+ assignmentId)
+    this.router.navigateByUrl("/module/" + this.activeRoute.snapshot.params["id"] + "/assignment/"+ assignmentId + "/grades")
   }
   DeleteClicked(assignmentId:number){
-    this.router.navigateByUrl("/module/"+ this.activeRoute.snapshot.params["id"]+"/assignments/delete/"+ assignmentId)
+    this.router.navigateByUrl("/module/"+ this.activeRoute.snapshot.params["id"]+"/assignment/delete/"+ assignmentId)
   }
   CreateAssignment(){
-    this.router.navigateByUrl(`/module/${this.activeRoute.snapshot.params["id"]}/assignments/create`)
+    this.router.navigateByUrl(`/module/${this.activeRoute.snapshot.params["id"]}/assignment/create`)
   }
 }

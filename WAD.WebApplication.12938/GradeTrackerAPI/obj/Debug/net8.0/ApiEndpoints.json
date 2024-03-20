@@ -72,7 +72,7 @@
   },
   {
     "ContainingType": "GradeTrackerAPI.Controllers.AssignmentController",
-    "Method": "UpdateStudent",
+    "Method": "UpdateAssignment",
     "RelativePath": "api/Assignment/{AssignmentId}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -117,7 +117,7 @@
   },
   {
     "ContainingType": "GradeTrackerAPI.Controllers.AssignmentController",
-    "Method": "DeleteStudent",
+    "Method": "DeleteAssignment",
     "RelativePath": "api/Assignment/{AssignmentId}",
     "HttpMethod": "DELETE",
     "IsController": true,

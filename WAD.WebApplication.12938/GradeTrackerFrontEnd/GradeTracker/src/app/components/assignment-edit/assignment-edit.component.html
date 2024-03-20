@@ -1,0 +1,17 @@
+<div class="flex justify-center items-center h-screen">
+    <form class="w-full max-w-lg">
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Module Name</mat-label>
+          <input matInput type="text" placeholder="Enter Assignment Name" [(ngModel)]="editAssignment.assignmentName" name="assignmentName" required>
+        </mat-form-field>
+      </div>
+      <div class="mb-4">
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Module Description</mat-label>
+          <textarea matInput placeholder="Enter Assignmetn Description" [(ngModel)]="editAssignment.assignmentDescription" name="assignmentDescription" required></textarea>
+        </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" type="submit" (click)="edit()">Edit</button>
+    </form>
+</div>
